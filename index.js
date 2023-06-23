@@ -1,9 +1,9 @@
 const { statSync } = require('fs')
-const {v4: uuid } = require('uuid')
+const { v4: uuid } = require('uuid')
 const cache = {}
 
 module.exports = {
-  process (content) {
+  process (content, filename) {
     content = content.replace(/`/g, '\\`').replace(/\$(?=\{.*?\})/g, '\\$')
     return {
       code: `module.exports = \`${content}\``

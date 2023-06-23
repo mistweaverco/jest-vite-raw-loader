@@ -10,8 +10,11 @@ Configure Jest for `.hbs?raw` files (just as an example):
 ```json
 {
   "jest": {
+    moduleNameMapper: {
+        '^(.+\\.hbs)\\?raw$': '$1'
+    },
     "transform": {
-      "^.+\\.hbs\\?raw$": "@mistweaverco/jest-vite-raw-transformer"
+      "^.+\\.hbs$": "@mistweaverco/jest-vite-raw-transformer"
     }
   }
 }
